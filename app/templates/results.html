@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/img/ai-camp-logo.png')}}" type="image/x-icon">
+    <meta name="description" content="">
+
+    <title>Insect Bite Detector Results! </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      body{
+background-image: url({{ url_for('static', filename='assets/img/sun-tornado.svg') }})
+      }
+      
+      .results-text {
+          text-align:center;
+      }
+      
+      .row{
+        padding-bottom: 5rem;
+      }
+      
+      .image-container {
+        display: flex;
+      }
+      
+      .main-img {
+        flex-grow: 4;
+        border-radius: 25px;
+
+      }
+      
+    </style>
+</head>
+
+<body>
+
+    <section id="msg-box4-2" data-rv-view="2" style="margin-top: 0rem; padding-top: 3rem; padding-bottom: 0rem;">
+            <div class="container">  
+        <div class="row">
+                <div class="col justify-content-center align-items-center text-center">
+                    <h3 class="section-title display-4 results-text">Recognition Results</h3>
+                    <h3 class="we-found btn-text display-4 results-text">We found <strong><span style='text-transform: capitalize;'>{{labels}}!</span></strong></h3>
+
+                    <div class="lead" style='text-transform: capitalize;'> <em>with {{confidences}} confidence.</em></div>
+
+                    <a class="mb-0" id='seefood_button'>
+                        <form action="/" id='seefood_form' method=post enctype=multipart/form-data>
+                            <input id="seefood_input_field" name="file" type="file" onchange="this.form.submit();" hidden/>
+                        </form>
+                    </a>
+                </div>
+
+                </div>
+                <div class="row">
+                    <div class="image-container col justify-content-center align-items-center text-center">
+                      <img class="main-img mbr-figure fit-parent" src="{{ url_for('static', filename='uploads/' + filename)}}">
+                    </div>
+
+              </div>
+                    <div class="row justify-content-center align-items-center text-center">
+              <a href=" {{ url_for('home') }} "><button type="button" class="btn btn-primary">Go back to our home page!</button></a>
+                  </div>
+
+            </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        // added to get upload with a button working
+        document.getElementById('seefood_button').addEventListener('click', openDialog);
+
+        function openDialog() {
+            document.getElementById('seefood_input_field').click();
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#spinner").bind("ajaxSend", function() {
+                $(this).show();
+            }).bind("ajaxStop", function() {
+                $(this).hide();
+            }).bind("ajaxError", function() {
+                $(this).hide();
+            });
+            // seefood_input_field
+            $('#seefood_button').click(function() {
+
+            });
+        });
+    </script>
+
+</body>
+
+</html>

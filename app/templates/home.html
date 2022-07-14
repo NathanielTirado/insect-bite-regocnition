@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title> Insect Bite Detector </title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href= {{ url_for('static', filename = "assets/favicon.ico") }}/>
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <!-- Core theme CSS (includes Bootstrap)-->
+        <link href= {{ url_for('static', filename = "css/styles.css") }} rel="stylesheet" />
+        <style>
+          .masthead{
+            background-image: url({{ url_for('static', filename='assets/img/flat-mountains.svg') }})
+          }
+          
+          .img-fluid, .graph-container {
+            max-height: 30vh;
+          }
+          
+          #portfolio{ 
+            padding-left: 5vw;
+            padding-right: 5vw;
+          }
+      </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+      <div class="modal fade card" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">The Confusion Matrix!</h5>
+                            
+                          </div>
+                          <div class="modal-body">
+A summary of prediction results on a classification problem. Higher values mean there is a higher chance of the event happening. In order for the model to reach it’s true potential, we had to work to make sure the diagonal from the top left to the bottom right values were as high as possible!                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+        </div>
+        <div class="modal fade card" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">The P Curve!</h5>
+                          </div>
+                          <div class="modal-body">
+The distribution of statistically significant p values for a set of independent findings and takes the shape of a diagnostic of the evidential value of that set of findings. Our P curve provides the statistical backing that our model is able to effectively detect insect bites.                                                    </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+        </div>  
+  <div class="modal fade card" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">The F1 Curve!</h5>
+                          </div>
+                          <div class="modal-body">
+A Classification Error metric used to evaluate the classification machine learning algorithms and is useful in evaluating the prediction for binary classification of data. Although our model looks for than two different insect bites, the curve still provides us with reassurance that our model training was heading on the right track.                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+        </div>
+      <div class="modal fade card" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">The R curve!</h5>
+                          </div>
+                          <div class="modal-body">
+The R curve shows us that our model was resilient at many different classification thresholds. No matter the confidence level, our model could correctly tell us the correct result!
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+        </div>
+      <div class="modal fade card" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">The PR curve!</h5>
+                          </div>
+                          <div class="modal-body">
+The PR curve is a graph with Precision values on the y-axis and Recall values on the x-axis. Our PR curve relates the information found on our P and R curves on one single graphical plane, and shows us that our model is highly resilient against false positives and false negatives!                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+        </div>
+      <div class="modal fade card" id="exampleModalCenter6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Labels and Distributions!</h5>
+                          </div>
+                          <div class="modal-body">
+                                This graph provides us with more information on the dataset we used. As
+                            you can see, the first graph explains why our model is so good at finding 
+                            bed bugs and fire ants - we have waaay more data for it! The other graphs 
+                            show the distribution of various dimensions of the image such as width and height, as well as where the insect's bounding boxes typically were!.
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+        </div>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">Insect Bite Recognition</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#about">Our Purpose</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Meet The Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">The Data Behind Our Model</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">Insect Bite Recognition</h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">Our Insect Bite Recognition AI will allow you to upload a picture of an insect bite and will then relay to you from which insect it came!</p>
+                      <a class="" id='seefood_button' >
+                        <form id='seefood_form' method=post enctype=multipart/form-data>
+                               <input id="seefood_input_field" name = "file" type="file" onchange="this.form.submit();" hidden />
+                        </form>
+                          <button href="#" target = "_blank" class = "btn btn-primary btn-xl text-white-75 mb-5">
+                             Try it out!
+                          </button>
+                      </a>             
+
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h3 class="text-white mt-0">Our Purpose</h3>
+                        <hr class="divider divider-light" />
+                        <p class="text-white-75 mb-4">With this project, we aim to develop an AI that allows the user to upload a picture of any insect bite and relate all the necessary information. Essentially, users will be able to identify the bite they have and if it was a wasp, bed bug, tick, or fire ant that bit them. Ultimately, we would also like to be able to tell the user whether or not that insect could be carrying a deadly disease and offer suggestions on any possible treatment they could potentially need.  
+</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">Meet The Team</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                  <div class="col-lg-3 col-md-6 profile-card-4 text-center"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-4.jpg" class="img img-responsive">
+                      <div class="profile-content">
+                          <div class="profile-name">Anit Vallurupalli
+                              <p>I'm so cool </p>
+                          </div>
+                          <div class="profile-description">Anit is a high school student who enjoys learning about new things, such as AI. He is a quick learner, and likes AI a lot.</div>
+                      </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
+                      <div class="profile-name">Brianna</div>
+                          <div class="profile-username"> — Student at St. Catharine Academy in NYC
+            Brianna enjoys expanding her programming knowledge and skills, especially when its uses can contribute to her school’s Robotics Team. She was Project Manager and helped collect data and integrate the model to the frontend.</div>
+
+                  </div>
+                  <div class="col-lg-3 col-md-6 profile-card-6"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-6.jpg" class="img img-responsive">
+                      <div class="profile-name">Jasmine
+                          <br></div>
+                      
+                      <div class="profile-position">— Student at St. Catharine Academy in NYC
+                              Jasmine is a beginner programmer and is interested in expanding her knowledge, especially for the sake of her Robotics team at school. She helped collect data and played a huge role of coming up with the general idea for this A.I. </div>
+                  </div>
+                      
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Aanya</h3>
+                            <p class="text-muted mb-0"> - Student at Silver Creek High School. Aanya is 14 years old and joined AI camp to learn something new. She helped collect and annotate data, as well as develop the front end of this project.</p>
+                        </div>
+                    </div>
+                    
+                  <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-bicycle fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Nathaniel</h3>
+                            <p class="text-muted mb-0">- Student at Chaboya Middle School I am a beginner at coding and learned about the program from the school board. I joined because of my interest in how A.I works. I worked on collecting some data for the data and also making the meet the team page. :D</p>
+                        </div>
+                    </div>
+                   <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-star fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Ansh</h3>
+                            <p class="text-muted mb-0">- Hey everyone! I am the mentor/lead for this team , and have had the privilidge of working alongside these wonderful team. I strived to do my best to help our team make their dream product, and have a blast at AI Camp! :) </p>
+                        </div>
+                    </div>
+                </div>
+                  
+
+                       
+                </div>
+      </section>
+           
+                           
+   
+        
+        <!-- Portfolio-->
+        <div id="portfolio">
+                <h2 class="text-center mt-0">The Math behind the Magic </h2>
+                <hr class="divider" />
+          <div class="container-fluid p-0">
+              <div class="ml-1 mr-1 row g-0">
+                    <div class="graph-container col-lg-4 col-sm-6">
+                        <a class="portfolio-box" data-toggle="modal" href = "#exampleModalCenter1"  title="Confusion Matrix">
+                          <img class="img-fluid" src= {{ url_for('static', filename = "assets/img/portfolio/fullsize/confusion_matrix.png") }} alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50"> The Data Behind our Model</div>
+                                <div class="project-name">Check Out Our Confusion Matrix!</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="graph-container col-lg-4 col-sm-6">
+                        <a class="portfolio-box" data-toggle="modal" href = "#exampleModalCenter2"  title="P Curve Graph">
+                          <img class="img-fluid" src= {{ url_for('static', filename = "assets/img/portfolio/fullsize/P_curve.png") }} alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">The Data Behind our Model</div>
+                                <div class="project-name">Check Out Our P Curve!</div>
+                            </div>
+                        </a>
+                      
+                      
+                    </div>
+                    <div class="graph-container col-lg-4 col-sm-6">
+                 <a class="portfolio-box" data-toggle="modal" href = "#exampleModalCenter3"  title="F1 Curve">
+                          <img class="img-fluid" src= {{ url_for('static', filename = "assets/img/portfolio/fullsize/F1_curve.png") }} alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">The Data Behind our Model</div>
+                                <div class="project-name">Check Out Our F1 Curve!</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="graph-container col-lg-4 col-sm-6">
+ <a class="portfolio-box" data-toggle="modal" href = "#exampleModalCenter4"  title="R Curve">                          <img class="img-fluid" src= {{ url_for('static', filename = "assets/img/portfolio/fullsize/R_curve.png") }} alt="..." />
+
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">The Data Behind our Model</div>
+                                <div class="project-name">Check Out Our R Curve!</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="graph-container col-lg-4 col-sm-6">
+ <a class="portfolio-box" data-toggle="modal" href = "#exampleModalCenter5"  title="PR Curve">                                       <img class="img-fluid" src= {{ url_for('static', filename = "assets/img/portfolio/fullsize/PR_curve.png") }} alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">The Data Behind our Model</div>
+                                <div class="project-name">Check Out Our PR Curve!</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="graph-container col-lg-4 col-sm-6">
+ <a class="portfolio-box" data-toggle="modal" href = "#exampleModalCenter6"  title="Labels and Distributions Curve">                                       <img class="img-fluid" src= {{ url_for('static', filename = "assets/img/portfolio/fullsize/labels.jpg") }} alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                <div class="project-category text-white-50">The Data Behind our Model</div>
+                                <div class="project-name">Check Out Our Labels Graphs!</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Call to action-->
+        <section class="page-section bg-dark text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">Want to make some cool products? Join AI Camp! </h2>
+                <a class="btn btn-light btn-xl" target = _blank href="https://www.ai-camp.org/"> Check us out! </a>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6 text-center">
+                        <h2 class="mt-0">Let's Get In Touch!</h2>
+                        <hr class="divider" />
+                        <p class="text-muted mb-5">Ready to start your next project with us? Send us a messages and we will get back to you as soon as possible!</p>
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                    <div class="col-lg-6">
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <label for="name">Full name</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <label for="email">Email address</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <!-- Phone number input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <label for="phone">Phone number</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            </div>
+                            <!-- Message input-->
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <label for="message">Message</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                    <br />
+                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            <!-- Submit Button-->
+                            <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Submit</button></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                        <i class="bi-phone fs-2 mb-3 text-muted"></i>
+                        <div>+1 (555) 123-4567</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - Purple Pandas, 2022 AI Camp Batch B</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script>
+        // added to get upload with a button working
+        document.getElementById('seefood_button').addEventListener('click', openDialog);
+
+        function openDialog() {
+            document.getElementById('seefood_input_field').click();
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#spinner").bind("ajaxSend", function() {
+                $(this).show();
+            }).bind("ajaxStop", function() {
+                $(this).hide();
+            }).bind("ajaxError", function() {
+                $(this).hide();
+            });
+            // seefood_input_field
+            $('#seefood_button').click(function() {
+
+            });
+        });
+    </script>
+    </body>
+</html>

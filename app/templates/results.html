@@ -11,6 +11,8 @@
 
     <title>Insect Bite Detector Results! </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href= {{ url_for('static', filename = "css/style.css") }} rel="stylesheet" />
+
     <style>
       
       html {
@@ -41,6 +43,7 @@
   }
       
       h1,h2,h3,h4,h5, h6 {
+            color:white;
             font-family: var(--font-poppins);
       }
       
@@ -104,7 +107,7 @@
 
 <body>
 
-    <section id="msg-box4-2" data-rv-view="2" style="margin-top: 0rem; padding-top: 3rem; padding-bottom: 0rem;">
+    <section class="page-section bg-black">
             <div class="container1-div">  
                 <h3 class="display-4 results-text text-white top-text"> Here's What We Found! </h3>
                 <div class="disp">
@@ -118,7 +121,168 @@
             <div>
               <h3 class="we-found btn-text display-4 results-text text-white">Your Image Contains ...  <strong><span style='text-transform: capitalize;'>{{labels}}s!</span></strong></h3>
             </div>
-      </div>  
+  </section>
+  <hr>
+  <section class="page-section text-white">
+        <article class="postcard dark blue">
+              <a class="postcard__img_link" href="#">
+                <img class="postcard__img" src="https://images.emedicinehealth.com/images/slideshow/bad_bugs_s20.jpg" alt="Image Title" />
+              </a>
+              <div class="postcard__text">
+                <h1 class="postcard__title blue"><a href="#">Thoose bratty bed bugs!</a></h1>
+                <div class="postcard__subtitle small">
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">
+                  <p>
+                    Bed Bugs are most commonly found in areas where people rest or sleep, such as:
+                  
+                  <ul>
+                    <li>Furniture</li>
+                    <li>Beds</li>
+                    <li>The inside seams of furniture</li>
+                    
+                  </ul>
+                  </p>
+                <p>
+                    Most commonly, you'd get a bed bug bite at:
+                  
+                  <ul>
+                    <li>Hotels</li>
+                    <li>Nursing homes</li>
+                    <li>Schools and daycare centers</li>
+                    <li>Hospitals</li>
+                    <li>College Dorms</li>
+                    <li>Public Transportation</li>
+       
+                  </ul>
+                  </p>
+                  <p>
+                    Alright, how do we remedy a bug bite?
+                    <ul>
+                    <li>Calamine Lotion, Non Prescription Hydrocortisone or any Anti-Itch Cream</li>
+                    <li>Tea Tree Oil</li>
+                    <li>Cool compress</li>
+                    <li>Oral Antihistamine</li>
+                    </ul>
+          </p>
+</div>
+              </div>
+            </article>
+		<article class="postcard dark red">
+			<a class="postcard__img_link" href="#">
+				<img class="postcard__img" src="https://images.everydayhealth.com/images/skin-beauty/bug-bites/did-a-wasp-sting-me-00-722x406.jpg" alt="Image Title" />	
+			</a>
+			<div class="postcard__text">
+				<h1 class="postcard__title red"><a href="#">That witchy wasp!</a></h1>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt">
+                  <p>
+                    Wasps are most commonly found all over North America in places such as:
+
+                  
+                  <ul>
+                    <li>Meadows</li>
+                    <li>Orchards</li>
+                    <li>Woodlands</li>
+                    <li>Playgrounds</li>
+                    <li>Urban/Suburban Settings</li>
+                  </ul>
+                  </p>
+                <p>
+                    Alright, how do we remedy a wasp bite?
+                  
+                  <ul>
+                    <li>Tylenol or ibuprofen Motrin</li>
+                    <li>Hydrocortisone cream</li>
+                    <li>Wrap a thin cloth around an ice or cold pack</li>
+                  </ul>
+                  </p>
+</div>
+			</div>
+		</article>
+<article class="postcard dark green">
+			<a class="postcard__img_link" href="#">
+				<img class="postcard__img" src="https://news.uga.edu/wp-content/uploads/2020/10/Fire_ant2-1024x635.jpg" alt="Image Title" />
+			</a>
+			<div class="postcard__text">
+				<h1 class="postcard__title green"><a href="#">Flippin' fire ants! </a></h1>
+				<div class="postcard__bar"></div>
+								<div class="postcard__preview-txt">
+                  <p>
+                    Fire ants are most commonly found in places such as:
+                
+                  <ul>
+                    <li>Crops</li>
+                    <li>Animals</li>
+                    <li>Southern US States</li>
+                  </ul>
+                  </p>
+                <p>
+                    Alright, how do we remedy a fire ant bite?
+                  
+                  <ul>
+                    <li>Cold Compress to reduce swelling ~20mins</li>
+                    <li>Hydrocortisone cream</li>
+                    <li>Wrap a thin cloth around an ice or cold pack</li>
+                  </ul>
+                  </p>
+</div>
+			</div>
+		</article>
+<article class="postcard dark yellow">
+			<a class="postcard__img_link" href="#">
+				<img class="postcard__img" src="https://www.cdc.gov/ticks/images/gallery/Rhipicephalussanguineus_hires-small.jpg" alt="Image Title" />
+			</a>
+			<div class="postcard__text">
+				<h1 class="postcard__title yellow"><a href="#">Troubling Ticks!</a></h1>
+				<div class="postcard__subtitle small">
+				</div>
+				<div class="postcard__bar"></div>
+<div class="postcard__preview-txt">
+                  <p>
+                    Ticks are most commonly found in places such as:
+                
+                  <ul>
+                    <li>Grass</li>
+                    <li>Trees</li>
+                    <li>Shrubs</li>
+                    <li>Leaf Piles</li>
+                    <li>Your hidden stash of Lucky Charms!</li>
+
+  </ul>
+                  </p>
+                <p>
+                  
+                  <p>
+                  It’s important to contact your doctor as soon as you can after identifying your tick bite. Tick bites can be fatal and depending on your situation, your doctor may recommend you to receive treatment for Lyme disease before your symptoms can even begin. Make sure to clean the area thoroughly with antibacterial cleanser or ointment after the tick has been removed.  
+        </p>
+        <p> 
+                  You can identify a tick bite by looking for the following:
+                <ul>
+                  <li> P<strong></strong>ain/swelling around the bite area
+ </li>        
+                  <li> Tick usually tends to remain attached to the skin for a long time
+
+ </li>        
+                  <li> Bites rarely appear in groups
+ </li>        
+                      
+              </ul>
+        </p>
+        
+                  
+                    Alright, how do we remedy a tick bite on our own?
+                  
+                  <ul>
+                    <li>Take an antihistamine medicine to relieve itching, redness, and swelling</li>
+                    <li>Put calamine lotion on the skin</li>
+                    <li>Use a spray of local anesthetic that contains benzocainse, such as Solarcaine</li>
+                  </ul>
+                  </p>
+</div>				
+			</div>
+		</article>
   </section>
 
 

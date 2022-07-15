@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title> Insect Bite Detector </title>
+        <title>Creative - Start Bootstrap Theme</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href= {{ url_for('static', filename = "assets/favicon.ico") }}/>
         <!-- Bootstrap Icons-->
@@ -33,6 +33,13 @@
             padding-left: 5vw;
             padding-right: 5vw;
           }
+          
+          .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+          }
+
       </style>
     </head>
     <body id="page-top">
@@ -73,7 +80,7 @@ The distribution of statistically significant p values for a set of independent 
                             <h5 class="modal-title" id="exampleModalLongTitle">The F1 Curve!</h5>
                           </div>
                           <div class="modal-body">
-A Classification Error metric used to evaluate the classification machine learning algorithms and is useful in evaluating the prediction for binary classification of data. Although our model looks for than two different insect bites, the curve still provides us with reassurance that our model training was heading on the right track.                          </div>
+A Classification Error metric used to evaluate the classification machine learning algorithms and is useful in evaluating the prediction for binary classification of data. Although our model looks for more than two different types of insect bites, the curve still provides us with reassurance that our model training was heading on the right track.                          </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                           </div>
@@ -150,7 +157,7 @@ The PR curve is a graph with Precision values on the y-axis and Recall values on
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">Our Insect Bite Recognition AI will allow you to upload a picture of an insect bite and will then relay to you from which insect it came!</p>
+                        <p class="text-white-75 mb-5">Our Insect Bite Recognition AI will allow you to upload a picture of an insect bite, and it will then relay to you which insect it came from!</p>
                       <a class="" id='seefood_button' >
                         <form id='seefood_form' method=post enctype=multipart/form-data>
                                <input id="seefood_input_field" name = "file" type="file" onchange="this.form.submit();" hidden />
@@ -158,7 +165,7 @@ The PR curve is a graph with Precision values on the y-axis and Recall values on
                           <button href="#" target = "_blank" class = "btn btn-primary btn-xl text-white-75 mb-5">
                              Try it out!
                           </button>
-                      </a>             
+                      </a>
 
                     </div>
                 </div>
@@ -171,7 +178,7 @@ The PR curve is a graph with Precision values on the y-axis and Recall values on
                     <div class="col-lg-8 text-center">
                         <h3 class="text-white mt-0">Our Purpose</h3>
                         <hr class="divider divider-light" />
-                        <p class="text-white-75 mb-4">With this project, we aim to develop an AI that allows the user to upload a picture of any insect bite and relate all the necessary information. Essentially, users will be able to identify the bite they have and if it was a wasp, bed bug, tick, or fire ant that bit them. Ultimately, we would also like to be able to tell the user whether or not that insect could be carrying a deadly disease and offer suggestions on any possible treatment they could potentially need.  
+                        <p class="text-white-75 mb-4">With this project, we aim to develop an AI that allows the user to upload a picture of any insect bite and relate all the necessary information. Essentially, users will be able to identify the bite they have and what insect gave it to them. Ultimately, we would also like to be able to tell the user whether or not that insect could be carrying a deadly disease and offer suggestions on any possible treatment they could potentially need.  
 </p>
                     </div>
                 </div>
@@ -183,63 +190,105 @@ The PR curve is a graph with Precision values on the y-axis and Recall values on
                 <h2 class="text-center mt-0">Meet The Team</h2>
                 <hr class="divider" />
                 <div class="row gx-4 gx-lg-5">
-                  <div class="col-lg-3 col-md-6 profile-card-4 text-center"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-4.jpg" class="img img-responsive">
-                      <div class="profile-content">
+                  <div class="col-lg-3 col-md-6 profile-card-4 text-center" ><img src= {{ url_for('static', filename = "assets/img/portfolio/fullsize/anit.png") }} class="img img-responsive">
+                      <div class="profile-content ">
                           <div class="profile-name">Anit Vallurupalli
-                              <p>I'm so cool </p>
+                              <p>:) </p>
                           </div>
-                          <div class="profile-description">Anit is a high school student who enjoys learning about new things, such as AI. He is a quick learner, and likes AI a lot.</div>
+                          <div class="profile-description">Anit is a student at Saratoga High school, and he really enjoys learning about many different subjects, especially AI. He finds AI interesting because of its implications on the world. He has helped by annotating pictures and looking at themes to make the website look good.
+</div>
                       </div>
                   </div>
-                  <div class="col-lg-3 col-md-6 profile-card-2"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" class="img img-responsive">
-                      <div class="profile-name">Brianna</div>
-                          <div class="profile-username"> — Student at St. Catharine Academy in NYC
+                  <div class="col-lg-3 col-md-6 profile-card-4 text-center" ><img src= {{ url_for('static', filename = "assets/img/portfolio/fullsize/brianna.png") }} class="img img-responsive" style="width:20vw;height:25vw;object-fit:contain;z-index:-1;">
+                      <div class="profile-content">
+                    <div class="profile-name">Brianna Rios
+                    
+                      </div>
+                          <div class="profile-description"> — Student at St. Catharine Academy in NYC
             Brianna enjoys expanding her programming knowledge and skills, especially when its uses can contribute to her school’s Robotics Team. She was Project Manager and helped collect data and integrate the model to the frontend.</div>
-
+                        
+                        
+                      </div>  
                   </div>
-                  <div class="col-lg-3 col-md-6 profile-card-6"><img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-6.jpg" class="img img-responsive">
-                      <div class="profile-name">Jasmine
+                  <div class="col-lg-3 col-md-6 profile-card-4 text-center" ><img src= {{ url_for('static', filename = "assets/img/portfolio/fullsize/jasmine.png") }} class="img img-responsive" style="width:20vw;height:25vw;object-fit:contain;z-index:-1;">
+                      <div class="profile-content">
+                      <div class="profile-name">Jasmine Carrion
                           <br></div>
                       
-                      <div class="profile-position">— Student at St. Catharine Academy in NYC
+                      <div class="profile-description">— Student at St. Catharine Academy in NYC
                               Jasmine is a beginner programmer and is interested in expanding her knowledge, especially for the sake of her Robotics team at school. She helped collect data and played a huge role of coming up with the general idea for this A.I. </div>
+                        
+                        
+                    </div>
                   </div>
-                      
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Aanya</h3>
-                            <p class="text-muted mb-0"> - Student at Silver Creek High School. Aanya is 14 years old and joined AI camp to learn something new. She helped collect and annotate data, as well as develop the front end of this project.</p>
-                        </div>
-                    </div>
-                    
-                  <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-bicycle fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Nathaniel</h3>
-                            <p class="text-muted mb-0">- Student at Chaboya Middle School I am a beginner at coding and learned about the program from the school board. I joined because of my interest in how A.I works. I worked on collecting some data for the data and also making the meet the team page. :D</p>
-                        </div>
-                    </div>
-                   <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <div class="mb-2"><i class="bi-star fs-1 text-primary"></i></div>
-                            <h3 class="h4 mb-2">Ansh</h3>
-                            <p class="text-muted mb-0">- Hey everyone! I am the mentor/lead for this team , and have had the privilidge of working alongside these wonderful team. I strived to do my best to help our team make their dream product, and have a blast at AI Camp! :) </p>
-                        </div>
-                    </div>
-                </div>
                   
+                      <div class="col-lg-3 col-md-6 profile-card-4 text-center" ><img src= {{ url_for('static', filename = "assets/img/portfolio/fullsize/nathan.png") }} class="img img-responsive" style="width:20vw;height:25vw;object-fit:contain;z-index:-1;">
+                      <div class="profile-content">
+                    <div class="profile-name">Nathaniel Tirado
+                    
+                      </div>
+                          <div class="profile-description"> - Student at Chaboya Middle School I am a beginner at coding and learned about the program from the school board. I joined because of my interest in how A.I works. I worked on collecting some data for the data and also making the meet the team page. :D</div>
+                        
+                        
+                    </div>  
 
-                       
-                </div>
+                  </div>
+                    
+                        <div class="col-lg-3 col-md-6 profile-card-4 text-center" ><img src= {{ url_for('static', filename = "assets/img/portfolio/fullsize/aanya.jpeg") }} class="img img-responsive" style="width:20vw;height:25vw;object-fit:contain;z-index:-1;">
+                      <div class="profile-content">
+                    <div class="profile-name">Aanya Khattar
+                    
+                      </div>
+                          <div class="profile-description"> - Student at Silver Creek High School. Aanya is 14 years old and joined AI camp to learn something new. She helped collect and annotate data, as well as develop the front end of this project.</div>
+                        
+                        
+                    </div>  
+
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 profile-card-4 text-center" ><img src= {{ url_for('static', filename = "assets/img/portfolio/fullsize/ansh.jpeg") }} class="img img-responsive" style="width:20vw;height:25vw;object-fit:contain;z-index:-1;">
+                      <div class="profile-content">
+                    <div class="profile-name">Ansh Chaurasia
+                    
+                      </div>
+                          <div class="profile-description"> - Hey everyone! I am the mentor/lead for this team , and have had the privilege of working alongside these wonderful team. I strive to do my best to help our team make their dream product, and have a blast at AI Camp! :)</div>
+                        
+                        
+                    </div>  
+
+                  </div>
+
+                                  </div>
+
+                              </div>
       </section>
+                       
+          
            
                            
-   
-        
-        <!-- Portfolio-->
-        <div id="portfolio">
-                <h2 class="text-center mt-0">The Math behind the Magic </h2>
+        <section class="page-section text-white" style="margin-bottom:5vh;background-color:magenta;">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">The Numbers Behind the Data </h2>
+            </div>
+
+            <div class="text-white text-center" >
+              <div style="display:inline-block;margin-right:5vw;">
+               <span id="count2" class="display-4" ></span>
+                training images!
+              </div >
+              <div style="display:inline-block;margin-right:5vw;">
+               <span id="count3" class="display-4" ></span>
+                validation images!
+              </div>
+              <div style="display:inline-block;margin-right:5vw;">
+               <span id="count4" class="display-4"></span>
+                testing images!
+              </div>
+            </div>
+        </section>
+      
+ <div id="portfolio">
+                <h2 class="text-center mt-0">The Math Behind the Magic </h2>
                 <hr class="divider" />
           <div class="container-fluid p-0">
               <div class="ml-1 mr-1 row g-0">
@@ -303,18 +352,21 @@ The PR curve is a graph with Precision values on the y-axis and Recall values on
         <!-- Call to action-->
         <section class="page-section bg-dark text-white">
             <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4">Want to make some cool products? Join AI Camp! </h2>
+                <h2 class="mb-4">Want To Make Some Cool Products? Join AI Camp! </h2>
                 <a class="btn btn-light btn-xl" target = _blank href="https://www.ai-camp.org/"> Check us out! </a>
             </div>
         </section>
+        
+
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 col-xl-6 text-center">
+     
+           <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="graph-container col-lg-8 col-xl-6 text-center">
                         <h2 class="mt-0">Let's Get In Touch!</h2>
                         <hr class="divider" />
-                        <p class="text-muted mb-5">Ready to start your next project with us? Send us a messages and we will get back to you as soon as possible!</p>
+                        <p class="text-muted mb-5">Feel free to leave any opinions and suggestions regarding our product and website! We are always looking to improve!</p>
                     </div>
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
@@ -374,12 +426,6 @@ The PR curve is a graph with Precision values on the y-axis and Recall values on
                         </form>
                     </div>
                 </div>
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-4 text-center mb-5 mb-lg-0">
-                        <i class="bi-phone fs-2 mb-3 text-muted"></i>
-                        <div>+1 (555) 123-4567</div>
-                    </div>
-                </div>
             </div>
         </section>
         <!-- Footer-->
@@ -393,9 +439,13 @@ The PR curve is a graph with Precision values on the y-axis and Recall values on
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * *                               SB Forms JS       * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+                        <div>+1 (555) 123-4567</div>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+       </div>
+                    </div>
+          
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <script>
         // added to get upload with a button working
@@ -405,10 +455,23 @@ The PR curve is a graph with Precision values on the y-axis and Recall values on
             document.getElementById('seefood_input_field').click();
         }
     </script>
-    <script type="text/javascript">
+          <script type="text/javascript">
         $(document).ready(function() {
             $("#spinner").bind("ajaxSend", function() {
-                $(this).show();
+    const counterAnim = (qSelector, start = 0, end, duration = 1000) => {
+       const target = document.querySelector(qSelector);
+       let startTimestamp = null;
+       const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        target.innerText = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+         window.requestAnimationFrame(step);
+        }
+       };
+       window.requestAnimationFrame(step);
+      };
+      //#endregion - end of - number counter animation            $(this).show();
             }).bind("ajaxStop", function() {
                 $(this).hide();
             }).bind("ajaxError", function() {
@@ -419,6 +482,30 @@ The PR curve is a graph with Precision values on the y-axis and Recall values on
 
             });
         });
+    </script>
+     <script>
+          //#region - start of - number counter animation
+const counterAnim = (qSelector, start = 0, end, duration = 1000) => {
+ const target = document.querySelector(qSelector);
+ let startTimestamp = null;
+ const step = (timestamp) => {
+  if (!startTimestamp) startTimestamp = timestamp;
+  const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+  target.innerText = Math.floor(progress * (end - start) + start);
+  if (progress < 1) {
+   window.requestAnimationFrame(step);
+  }
+ };
+ window.requestAnimationFrame(step);
+};
+//#endregion - end of - number counter animation
+       
+          document.addEventListener("DOMContentLoaded", () => {
+ counterAnim("#count2", 0, 1700, 5500);
+ counterAnim("#count3", 0, 171, 5500);
+ counterAnim("#count4", 0, 86, 5500);
+});
+
     </script>
     </body>
 </html>

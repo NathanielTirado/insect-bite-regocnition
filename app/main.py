@@ -40,6 +40,12 @@ def teams():
 
 @app.route(f'{base_url}', methods=['GET', 'POST'])
 def home():
+    
+    #Delete any files in the uploads directory
+    for filename in os.listdir(os.path.join(app.config['UPLOAD_FOLDER'])):
+        print(f'Deleting {filename}')
+        os.remove((os.path.join(app.config['UPLOAD_FOLDER'], filename)))
+    
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
